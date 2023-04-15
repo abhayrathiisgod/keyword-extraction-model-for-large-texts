@@ -128,7 +128,7 @@ def show_index():
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'network.jpg')
     return render_template("master.html", user_image = full_filename)
 
-# web page that handles user query and displays model results
+# web page that will  handles user query and displays model results
 @app.route('/go')
 def go():
     # save user input in query
@@ -138,7 +138,7 @@ def go():
     if " " in query:
         query=query.replace(" ","-")
 
-    # use model to predict classification for query
+    # used model to predict classification for query
     results=query_fun(query,graph)
     if results == " ":
         results=["No result found, Try adding "-" between the word"]
